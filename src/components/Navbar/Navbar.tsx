@@ -13,12 +13,48 @@ const Navbar = () => {
   const handleCloseMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className='flex items-center justify-between px-4 py-6'>
-      <img src={logoIcon} alt='logo icon for snap company' />
+    <header
+      className='md:flex items-center md:gap-12 px-4 
+        py-6 md:p-0'
+    >
+      <img
+        src={logoIcon}
+        alt='logo icon for snap company'
+        className='inline-block my-auto'
+      />
 
-      <button aria-label='click to open mobile navbar' onClick={handleOpenMenu}>
+      <button
+        aria-label='click to open mobile navbar'
+        onClick={handleOpenMenu}
+        className='md:hidden inline-block float-right my-auto'
+      >
         <img src={menuIcon} role='presentation' />
       </button>
+
+      {/* Navbar for Desktop view */}
+
+      <nav className='hidden md:flex w-full items-center justify-between text-sm'>
+        <ul className='flex gap-8'>
+          {navLinks.map((navLink) => (
+            <li key={navLink} className='py-2 md:p-0'>
+              <button className='capitalize text-mediumGray'>{navLink}</button>
+            </li>
+          ))}
+        </ul>
+
+        <div className='flex flex-col md:flex-row gap-4 md:gap-10 items-center justify-center'>
+          <button className='py-2 text-center text-mediumGray'>Login</button>
+
+          <button
+            className='py-2 md:px-5 text-center border-2 border-mediumGray
+              text-mediumGray w-full rounded-2xl md:rounded-xl'
+          >
+            Register
+          </button>
+        </div>
+      </nav>
+
+      {/* Navbar for Mobile Layout */}
 
       {isMenuOpen ? (
         <div
