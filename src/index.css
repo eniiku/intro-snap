@@ -11,3 +11,9 @@
     font-size: 1.125rem;
   }
 }
+
+/* decalarations for Navbar in /src/components/Navbar/Navbar */
+
+.mobile-nav-shadow {
+  box-shadow: -200px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
