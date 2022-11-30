@@ -15,13 +15,13 @@ const DropDown = ({
   const handleCloseDropDown = () => setIsOpen(false);
 
   return (
-    <div className='relative'>
+    <div className='lg:relative'>
       <button
         aria-label='click to open drop-down menu'
         onClick={() => {
           return !isOpen ? handleOpenDropDown() : handleCloseDropDown();
         }}
-        className='capitalize text-mediumGray hover:text-almostBlack'
+        className='capitalize text-mediumGray hover:text-almostBlack py-2 lg:py-0'
       >
         {children}
         <img src={arrowDownIcon} className='inline ml-2' aria-hidden />
@@ -29,8 +29,9 @@ const DropDown = ({
 
       {isOpen ? (
         <div
-          className='absolute z-40 shadow-2xl p-3 rounded-xl border border-mediumGray
-          border-opacity-10 -right-4 top-12 bg-white mr-8'
+          className='static z-40 lg:absolute lg:z-10 lg:shadow-2xl lg:bg-white 
+          lg:border-opacity-10 lg:-right-4 lg:top-12 lg:mr-8 lg:p-3 lg:rounded-xl 
+          lg:border lg:border-mediumGray'
         >
           {dropDownContent.map((item: any) => (
             <button

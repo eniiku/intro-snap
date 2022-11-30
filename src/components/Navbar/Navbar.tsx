@@ -93,7 +93,14 @@ const Navbar = () => {
 
           <nav className='mt-2'>
             <ul>
-              {navLinks.map((navLink) => (
+              <li>
+                <DropDown dropDownContent={featuresContent}>feature</DropDown>
+              </li>
+
+              <li>
+                <DropDown dropDownContent={companyContent}>company</DropDown>
+              </li>
+              {navLinks.slice(2).map((navLink) => (
                 <li key={navLink} className='py-2'>
                   <button className='capitalize text-mediumGray'>
                     {navLink}
