@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import arrowDownIcon from '../../assets/icons/icon-arrow-down.svg';
 
 const DropDown = ({
@@ -7,20 +9,32 @@ const DropDown = ({
   dropDownContent: {}[];
   children: string;
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenDropDown = () => setIsOpen(true);
+  const handleCloseDropDown = () => setIsOpen(false);
+
   return (
     <div>
-      <div>
+      <button
+        aria-label='click to open drop-down menu'
+        onClick={() => {
+          return !isOpen ? handleOpenDropDown() : handleCloseDropDown();
+        }}
+      >
         {children} <img src={arrowDownIcon} aria-hidden />
-      </div>
+      </button>
 
-      <ul>
-        {dropDownContent.map((item: any) => (
-          <li key={item.text}>
-            {item.icon ? <img src={item?.icon} aria-hidden /> : null}
-            {item.text}
-          </li>
-        ))}
-      </ul>
+      {isOpen ? (
+        <div>
+          {dropDownContent.map((item: any) => (
+            <button key={item.text} onClick={handleCloseDropDown}>
+              {item.icon ? <img src={item?.icon} aria-hidden /> : null}
+              {item.text}
+            </button>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 };
