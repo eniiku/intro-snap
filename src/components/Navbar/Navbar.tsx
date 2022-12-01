@@ -1,10 +1,24 @@
 import { useState } from 'react';
 
+import DropDown from './DropDown';
 import logoIcon from '../../assets/icons/logo.svg';
 import menuIcon from '../../assets/icons/icon-menu.svg';
 import closeMenuIcon from '../../assets/icons/icon-close-menu.svg';
 
 const navLinks = ['features', 'company', 'careers', 'about'];
+
+const featuresContent = [
+  { icon: '/src/assets/icons/icon-todo.svg', text: 'todo list' },
+  { icon: '/src/assets/icons/icon-calendar.svg', text: 'calender' },
+  { icon: '/src/assets/icons/icon-reminders.svg', text: 'reminders' },
+  { icon: '/src/assets/icons/icon-planning.svg', text: 'planning' },
+];
+
+const companyContent = [
+  { text: 'history' },
+  { text: 'our team' },
+  { text: 'blog' },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +49,15 @@ const Navbar = () => {
 
       <nav className='hidden md:flex w-full items-center justify-between text-sm'>
         <ul className='flex gap-8'>
-          {navLinks.map((navLink) => (
+          <li>
+            <DropDown dropDownContent={featuresContent}>feature</DropDown>
+          </li>
+
+          <li>
+            <DropDown dropDownContent={companyContent}>company</DropDown>
+          </li>
+
+          {navLinks.slice(2).map((navLink) => (
             <li key={navLink} className='py-2 md:p-0'>
               <button className='capitalize text-mediumGray'>{navLink}</button>
             </li>
@@ -71,7 +93,14 @@ const Navbar = () => {
 
           <nav className='mt-2'>
             <ul>
-              {navLinks.map((navLink) => (
+              <li>
+                <DropDown dropDownContent={featuresContent}>feature</DropDown>
+              </li>
+
+              <li>
+                <DropDown dropDownContent={companyContent}>company</DropDown>
+              </li>
+              {navLinks.slice(2).map((navLink) => (
                 <li key={navLink} className='py-2'>
                   <button className='capitalize text-mediumGray'>
                     {navLink}
