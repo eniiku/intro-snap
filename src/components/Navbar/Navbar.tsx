@@ -59,7 +59,10 @@ const Navbar = () => {
 
           {navLinks.slice(2).map((navLink) => (
             <li key={navLink} className='py-2 md:p-0'>
-              <button className='capitalize text-mediumGray hover:text-almostBlack'>
+              <button
+                className='capitalize text-mediumGray hover:text-almostBlack transition-all 
+                duration-300 ease-in-out delay-75'
+              >
                 {navLink}
               </button>
             </li>
@@ -67,14 +70,17 @@ const Navbar = () => {
         </ul>
 
         <div className='flex flex-col md:flex-row gap-4 md:gap-10 items-center justify-center'>
-          <button className='py-2 text-center text-mediumGray hover:text-almostBlack'>
+          <button
+            className='py-2 text-center text-mediumGray hover:text-almostBlack transition-all 
+            duration-300 ease-in-out delay-75'
+          >
             Login
           </button>
 
           <button
             className='py-2 md:px-5 text-center border-2 border-mediumGray
               text-mediumGray w-full rounded-2xl md:rounded-xl hover:text-almostBlack
-              hover:border-almostBlack'
+              hover:border-almostBlack transition-all duration-300 ease-in-out delay-75'
           >
             Register
           </button>
@@ -96,7 +102,7 @@ const Navbar = () => {
             <img src={closeMenuIcon} role='presentation' />
           </button>
 
-          <nav className='mt-2'>
+          <nav className='mt-2 transition-all duration-300 ease-in delay-300'>
             <ul>
               <li>
                 <DropDown dropDownContent={featuresContent}>feature</DropDown>
@@ -107,7 +113,13 @@ const Navbar = () => {
               </li>
               {navLinks.slice(2).map((navLink) => (
                 <li key={navLink} className='py-2'>
-                  <button className='capitalize text-mediumGray hover:text-almostBlack'>
+                  <button
+                    className='capitalize text-mediumGray hover:text-almostBlack'
+                    transition-all
+                    duration-300
+                    ease-in
+                    delay-out-75
+                  >
                     {navLink}
                   </button>
                 </li>
@@ -115,13 +127,17 @@ const Navbar = () => {
             </ul>
 
             <div className='flex flex-col items-center justify-center'>
-              <button className='py-2 text-center text-mediumGray hover:text-almostBlack hover:border-almostBlack'>
+              <button
+                className='py-2 text-center text-mediumGray hover:text-almostBlack hover:border-almostBlack 
+                transition-all duration-300 ease-in-out delay-75'
+              >
                 Login
               </button>
 
               <button
                 className='py-2 text-center border-2 border-mediumGray
-              text-mediumGray w-full rounded-2xl hover:text-almostBlack hover:border-almostBlack'
+              text-mediumGray w-full rounded-2xl hover:text-almostBlack hover:border-almostBlack 
+                transition-all duration-300 ease-in-out delay-75'
               >
                 Register
               </button>

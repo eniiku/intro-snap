@@ -56,7 +56,8 @@ const Home = () => {
 
             <button
               className='bg-almostBlack rounded-[1.3rem] py-4 px-6 font-bold 
-              text-almostWhite my-6 md:my-3'
+              text-almostWhite my-6 md:my-3 hover:bg-transparent hover:text-almostBlack
+              hover:border hover:border-almostBlack transition-all duration-500 ease-in-out'
             >
               Learn more
             </button>
