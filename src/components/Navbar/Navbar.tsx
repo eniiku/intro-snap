@@ -59,17 +59,22 @@ const Navbar = () => {
 
           {navLinks.slice(2).map((navLink) => (
             <li key={navLink} className='py-2 md:p-0'>
-              <button className='capitalize text-mediumGray'>{navLink}</button>
+              <button className='capitalize text-mediumGray hover:text-almostBlack'>
+                {navLink}
+              </button>
             </li>
           ))}
         </ul>
 
         <div className='flex flex-col md:flex-row gap-4 md:gap-10 items-center justify-center'>
-          <button className='py-2 text-center text-mediumGray'>Login</button>
+          <button className='py-2 text-center text-mediumGray hover:text-almostBlack'>
+            Login
+          </button>
 
           <button
             className='py-2 md:px-5 text-center border-2 border-mediumGray
-              text-mediumGray w-full rounded-2xl md:rounded-xl'
+              text-mediumGray w-full rounded-2xl md:rounded-xl hover:text-almostBlack
+              hover:border-almostBlack'
           >
             Register
           </button>
@@ -102,7 +107,7 @@ const Navbar = () => {
               </li>
               {navLinks.slice(2).map((navLink) => (
                 <li key={navLink} className='py-2'>
-                  <button className='capitalize text-mediumGray'>
+                  <button className='capitalize text-mediumGray hover:text-almostBlack'>
                     {navLink}
                   </button>
                 </li>
@@ -110,13 +115,13 @@ const Navbar = () => {
             </ul>
 
             <div className='flex flex-col items-center justify-center'>
-              <button className='py-2 text-center text-mediumGray'>
+              <button className='py-2 text-center text-mediumGray hover:text-almostBlack hover:border-almostBlack'>
                 Login
               </button>
 
               <button
                 className='py-2 text-center border-2 border-mediumGray
-              text-mediumGray w-full rounded-2xl'
+              text-mediumGray w-full rounded-2xl hover:text-almostBlack hover:border-almostBlack'
               >
                 Register
               </button>
