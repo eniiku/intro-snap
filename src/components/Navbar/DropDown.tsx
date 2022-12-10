@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import arrowDownIcon from '../../assets/icons/icon-arrow-down.svg';
+import arrowUpIcon from '../../assets/icons/icon-arrow-up.svg';
 
 const DropDown = ({
   dropDownContent,
@@ -24,7 +25,11 @@ const DropDown = ({
         className='capitalize text-mediumGray hover:text-almostBlack py-2 lg:py-0'
       >
         {children}
-        <img src={arrowDownIcon} className='inline ml-2' aria-hidden />
+        <img
+          src={isOpen ? arrowUpIcon : arrowDownIcon}
+          className='inline ml-2'
+          aria-hidden
+        />
       </button>
 
       {isOpen ? (
