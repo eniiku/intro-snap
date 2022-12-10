@@ -37,7 +37,7 @@ const Home = () => {
           className='mt-12 flex flex-col items-center justify-center px-4
         md:grid md:grid-cols-2 md:gap-12'
         >
-          <div className='md:flex md:flex-col md:justify-between md:items-start'>
+          <div className='md:flex md:flex-col md:justify-between md:items-start text-center'>
             <div>
               <h1
                 className='text-almostBlack font-bold text-4xl md:text-7xl text-center
@@ -54,7 +54,7 @@ const Home = () => {
 
             <button
               className='bg-almostBlack rounded-[1.3rem] py-4 px-6 font-bold 
-          text-almostWhite my-6'
+              text-almostWhite my-6'
             >
               Learn more
             </button>
@@ -74,7 +74,9 @@ const Home = () => {
             </div>
           </div>
 
-          <div>
+          {/* Image for desktop view */}
+
+          <div className='hidden md:block'>
             <img src={heroImageDesktop} role-='presentation' />
           </div>
         </div>
