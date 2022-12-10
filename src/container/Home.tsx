@@ -35,40 +35,42 @@ const Home = () => {
       <div className='md:flex md:justify-center md:items-center md:px-[8vw] md:py-[2vh]'>
         <div
           className='mt-12 flex flex-col items-center justify-center px-4
-        md:grid md:grid-cols-2 md:gap-12'
+        md:grid md:grid-cols-2 md:gap-20'
         >
-          <div className='md:flex md:flex-col md:justify-between md:items-start text-center'>
-            <div>
-              <h1
-                className='text-almostBlack font-bold text-4xl md:text-7xl text-center
-              md:text-left'
-              >
-                Make remote work
-              </h1>
+          <div className='md:flex md:flex-col md:justify-between md:items-start text-center h-full'>
+            <div className='md:h-[60%] md:flex md:flex-col md:justify-end'>
+              <div>
+                <h1
+                  className='text-almostBlack font-bold text-4xl md:text-7xl text-center
+                md:text-left md:pb-12'
+                >
+                  Make remote work
+                </h1>
 
-              <p className='text-center md:text-left mt-4 text-mediumGray md:w-4/6'>
-                Get your team in sync, no matter the location. Streamline
-                processes, create team rituals, and watch productivity soar.
-              </p>
+                <p className='text-center md:text-left mt-4 text-mediumGray md:w-[90%]'>
+                  Get your team in sync, no matter the location. Streamline
+                  processes, create team rituals, and watch productivity soar.
+                </p>
+              </div>
             </div>
 
             <button
               className='bg-almostBlack rounded-[1.3rem] py-4 px-6 font-bold 
-              text-almostWhite my-6'
+              text-almostWhite my-6 md:my-3'
             >
               Learn more
             </button>
 
             <div
               aria-label='list of clients that trust in our work'
-              className='flex justify-between items-center py-4'
+              className='flex justify-between items-center py-4 md:w-[90%]'
             >
               {trustedClients.map((client) => (
                 <img
                   key={client.name}
                   src={client.src}
                   alt={client.name}
-                  className='w-[20%] md:w-[15%]'
+                  className='w-[20%] md:w-[18%]'
                 />
               ))}
             </div>
